@@ -50,6 +50,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+    // セルをタップした時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 初期化
+        let board = UIPasteboard.general
+        // テキストをコピーする
+        board.string = addressArray[indexPath.row]
+    }
 
     // セルをスライドした時の処理
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
